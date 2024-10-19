@@ -8,5 +8,11 @@ function getComputerChoice() {
         return "scissors";
     }
 }
+function getHumanChoice() {
+    const humanChoice = prompt("Enter choice between rock, paper, scissors");
+    return humanChoice.toLowerCase();
+}
+const humanScore = 0;
+const computerScore = 0;
 
 
