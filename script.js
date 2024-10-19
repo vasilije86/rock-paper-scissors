@@ -30,3 +30,19 @@ function playRound(humanChoice,computerChoice){
         computerScore++;
     }
 }
+function playGame() {
+    for (i = 0;i < 5; i++){
+        const humanSelection = getHumanChoice()
+        const computerSelection = getComputerChoice()
+        playRound(humanSelection,computerSelection)
+    }
+    console.log(`Gamer OVER!\nComputer Score: ${computerScore}\nHuman Score: ${humanScore}`)
+    if (humanScore > computerScore){
+        console.log("You WIN!")
+    } else if (computerScore > humanScore) {
+        console.log("You LOSE!")
+    } else{
+        console.log("It's a TIE!")
+    }
+}
+playGame()
