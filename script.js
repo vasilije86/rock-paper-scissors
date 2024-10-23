@@ -16,8 +16,8 @@ let humanScore = 0;
 let computerScore = 0;
 function playRound(humanChoice,computerChoice){
     if (humanChoice === computerChoice){
-        console.log("It's a tie!")
-        return
+        console.log("It's a tie!");
+        return;
     }
     if ((humanChoice === "rock" && computerChoice === "scissors") ||
         (humanChoice === "scissors" && computerChoice==="paper") ||
@@ -30,19 +30,32 @@ function playRound(humanChoice,computerChoice){
         computerScore++;
     }
 }
-function playGame() {
-    for (i = 0;i < 5; i++){
-        const humanSelection = getHumanChoice()
-        const computerSelection = getComputerChoice()
-        playRound(humanSelection,computerSelection)
-    }
-    console.log(`Gamer OVER!\nComputer Score: ${computerScore}\nHuman Score: ${humanScore}`)
-    if (humanScore > computerScore){
-        console.log("You WIN!")
-    } else if (computerScore > humanScore) {
-        console.log("You LOSE!")
-    } else{
-        console.log("It's a TIE!")
-    }
-}
-playGame()
+// function playGame() {
+//     for (i = 0;i < 5; i++){
+//         const humanSelection = getHumanChoice();
+//         const computerSelection = getComputerChoice();
+//         playRound(humanSelection,computerSelection);
+//     }
+//     console.log(`Gamer OVER!\nComputer Score: ${computerScore}\nHuman Score: ${humanScore}`);
+//     if (humanScore > computerScore){
+//         console.log("You WIN!")
+//     } else if (computerScore > humanScore) {
+//         console.log("You LOSE!");
+//     } else{
+//         console.log("It's a TIE!");
+//     }
+// }
+// playGame();
+
+const rockButton = document.querySelector('#rock');
+const paperButton = document.querySelector('#paper');
+const scissorsButton = document.querySelector('#scissors');
+rockButton.addEventListener("click", () => {
+    playRound('rock', getComputerChoice());
+});
+paperButton.addEventListener('click', () => {
+    playRound("paper", getComputerChoice());
+});
+scissorsButton.addEventListener('click', () => {
+    playRound('scissors', getComputerChoice());
+});
